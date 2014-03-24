@@ -16,9 +16,9 @@ end
 # (Hint: the is_a? method might be useful here)
 # 
 def sum_only_numbers(an_array)
-an_array.select{|x| x.class == Fixnum}.inject(0) do |total, num|
-total += num
-end
+  an_array.select{|x| x.class == Fixnum}.inject(0) do |total, num|
+   total += num
+  end
 end
 
 # For i from 1 to 100, return an array.
@@ -29,6 +29,19 @@ end
 # Otherwise, the element is simply the value of i
 # For example [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', ..., 14, 'FizzBuzz', ...]
 def fizzbuzz
+  array = Array.new(100)
+  for i in 1...100
+   if (i%3==0) && (i%5==0)
+    array.push("FizzBuzz")
+    elsif (i%3==0)
+    array.push("Fizz")
+    elsif (i%5==0)
+    array.push("Buzz")
+    else
+     array.push(i)
+    end
+   end
+  return array
 end
 
 # Uncomment each of these to test your functions
