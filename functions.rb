@@ -7,7 +7,7 @@ end
 # Letters should be lowercase before counting
 # For example, histogram('Hello') returns {'h'=>1,'e'=>1,'l'=>2,'o'=>1}
 def histogram(a_string)
-Hash[*a_string.split("").group_by{|v| v}.flat_map{ |k, v| [k, v.size]}]
+Hash[*a_string.downcase.split("").group_by{|v| v}.flat_map{ |k, v| [k, v.size]}]
 end
 
 # Sum all the numbers in the array
@@ -29,7 +29,7 @@ end
 # Otherwise, the element is simply the value of i
 # For example [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', ..., 14, 'FizzBuzz', ...]
 def fizzbuzz
-  array = Array.new(100)
+  array = []
   for i in 1...100
    if (i%3==0) && (i%5==0)
     array.push("FizzBuzz")
